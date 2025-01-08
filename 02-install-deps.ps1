@@ -27,7 +27,7 @@ function msys2_bash_exec {
     & $TOOLS_DIR\msys2\msys2_shell.cmd -defterm -no-start -here -msys -shell bash -c $args[0]
 }
 
-# update msys2 (requires manual refresh)
+# update msys2 (essential packages first)
 msys2_bash_exec "pacman --noconfirm -Syu"
 # install msys2 deps
 msys2_bash_exec "pacman --noconfirm -S git patch unzip rsync"
